@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Mobile radius - unchanged, as requested */
+  --orbit-radius: 180px; 
 }
 
 @theme inline {
@@ -24,3 +26,56 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* --- WIDER ORBIT FOR DESKTOP --- */
+@media (min-width: 768px) {
+  :root {
+    /* Increased from 220px to 320px to push the planets further out */
+    --orbit-radius: 320px; 
+  }
+}
+
+
+/* Sun/Background Pulsing Animation */
+@keyframes pulse-sun {
+  0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) scale(1.05) rotate(3deg); }
+  100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+.animate-sun {
+  animation: pulse-sun 5s infinite ease-in-out;
+}
+
+/* Planet Orbital Animation */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+
+.orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  /* --- REQUIRED FOR STABLE ORBIT WITH LARGE PNGS --- */
+  width: 128px;
+  height: 128px;
+  margin-top: -64px; /* Exactly half of 128px to center the rotation point */
+  margin-left: -64px; /* Exactly half of 128px to center the rotation point */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  animation: orbit 48s linear infinite;
+}
+
+/* Stagger the starting positions of the 6 icons */
+.orbit-1 { animation-delay: 0s; }
+.orbit-2 { animation-delay: -8s; }
+.orbit-3 { animation-delay: -16s; }
+.orbit-4 { animation-delay: -24s; }
+.orbit-5 { animation-delay: -32s; }
+.orbit-6 { animation-delay: -40s; }
