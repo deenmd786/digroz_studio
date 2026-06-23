@@ -2,6 +2,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
+// --- PAGE SPECIFIC SEO METADATA ---
+export const metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with the Digroz Studio team. We are here to help with support, feedback, or business inquiries regarding our creator tools.',
+};
+
 export default function ContactPage() {
   return (
     // Consistent dark space background matching Hero and Privacy pages
