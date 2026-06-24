@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -22,9 +23,13 @@ export default function Navbar() {
       
       {/* Logo Section */}
       <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-        <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-purple-500 to-blue-500 flex items-center justify-center">
-          <div className="w-3 h-3 bg-white rounded-full"></div>
-        </div>
+        <Image 
+          src="/assets/logo.png" 
+          alt="Digroz Studio Logo" 
+          width={40} 
+          height={40} 
+          className="object-cover rounded-md" // Added rounded-md just in case your logo is square
+        />
         <span className="font-semibold tracking-wide text-lg">DIGROZ STUDIO</span>
       </Link>
 
