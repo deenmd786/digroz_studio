@@ -1,12 +1,11 @@
 import Image from 'next/image';
 
 export default function Hero() {
-  // 1. BULLETPROOF BACKGROUND: Using standard Tailwind 'to-b' (top-to-bottom) gradient. 
-  // This guarantees a deep, rich space-blue color instead of harsh black.
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center pt-20 pb-32 overflow-hidden bg-gradient-to-b from-[#1a1b4b] via-[#0d0e1f] to-black text-white">
+    // FIX: Removed min-h-screen and the bg-gradient classes so it blends flawlessly with the Navbar
+    <section className="relative w-full flex flex-col items-center pt-12 md:pt-20 pb-32 overflow-hidden text-white z-10">
       
-      {/* 2. ENHANCED AMBIENT GLOW: Increased opacity to /20 so you can actually see the light */}
+      {/* ENHANCED AMBIENT GLOW */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-indigo-500/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
       {/* Headlines */}

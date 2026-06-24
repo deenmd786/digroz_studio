@@ -6,12 +6,12 @@ export default function Testimonials() {
       name: 'Sarah K.',
       quote: '"The video tools are a game-changer!"',
       // Replace with your actual image path in the public folder
-      avatar: '/assets/sarah.jpg', 
+      avatar: '/assets/sarah.png', 
     },
     {
       name: 'Mark L.',
       quote: '"The photo editor is my daily choice."',
-      avatar: '/assets/mark.jpg',
+      avatar: '/assets/mark.png',
     },
   ];
 
@@ -37,6 +37,7 @@ export default function Testimonials() {
                 src={item.avatar} 
                 alt={`${item.name} Avatar`}
                 fill
+                sizes="(max-width: 768px) 64px, 80px" // Added sizes prop here to fix the warning
                 className="object-cover relative z-10"
               />
             </div>

@@ -13,15 +13,14 @@ export const metadata = {
   creator: 'Digroz Studio',
   publisher: 'Digroz Studio',
   
-  // Open Graph (How your link looks when shared on Facebook, LinkedIn, Discord, etc.)
   openGraph: {
     title: 'Digroz Studio | Powerful Apps for Creators',
     description: 'A high-performance, privacy-first suite of media tools ensuring your creative workflow remains entirely under your control.',
-    url: 'https://www.digroz.com', // Replace with your actual live domain
+    url: 'https://www.digroz.com', 
     siteName: 'Digroz Studio',
     images: [
       {
-        src: '/assets/hero_bg.png', // Fallback to your hero image for link previews
+        src: '/assets/hero_bg.png', 
         width: 1200,
         height: 630,
         alt: 'Digroz Studio App Ecosystem',
@@ -31,7 +30,6 @@ export const metadata = {
     type: 'website',
   },
 
-  // Twitter Card (How your link looks when shared on X/Twitter)
   twitter: {
     card: 'summary_large_image',
     title: 'Digroz Studio | Powerful Apps for Creators',
@@ -39,7 +37,6 @@ export const metadata = {
     images: ['/assets/hero_bg.png'],
   },
   
-  // Search Engine Crawling Instructions
   robots: {
     index: true,
     follow: true,
@@ -55,7 +52,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    // FIX: Moved the gradient background here and added flex-col
+    <main className="min-h-screen bg-gradient-to-b from-[#1a1b4b] via-[#0d0e1f] to-black relative overflow-hidden flex flex-col pt-6">
       <Navbar />
       <Hero />
       <ToolsSection />

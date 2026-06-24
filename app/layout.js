@@ -5,7 +5,7 @@ export const metadata = {
   metadataBase: new URL('https://www.digroz.com'), // Replace with your live URL
   title: {
     default: "Digroz Studio | Powerful Apps for Creators",
-    template: "%s | Digroz Studio", // Automatically adds the brand name to child pages
+    template: "%s | Digroz Studio", 
   },
   description: "Digroz Studio empowers independent creators with a high-performance, privacy-first suite of media tools including photo mastering, video editing, and audio playback.",
   keywords: ["Digroz Studio", "creator tools", "video editor", "photo editor", "privacy-first apps", "multimedia streaming"],
@@ -13,6 +13,21 @@ export const metadata = {
   creator: "Digroz Studio",
   publisher: "Digroz Studio",
   
+  // 1. ADD YOUR FAVICONS HERE
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    // If you ever add an apple touch icon to your public folder, you can link it here:
+    // apple: ['/apple-touch-icon.png'],
+  },
+
+  // 2. PROPERLY ADD GOOGLE SITE VERIFICATION HERE
+  verification: {
+    google: '0mcqBiKdiJqE0YI0hajhy2z782UvXFEkE5Avqqem0i4',
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,8 +59,6 @@ export default function RootLayout({ children }) {
       lang="en" 
       className="h-full antialiased"
     >
-      <meta name="google-site-verification" content="0mcqBiKdiJqE0YI0hajhy2z782UvXFEkE5Avqqem0i4" />
-
       <body className="h-full bg-black text-white">
         {children}
       </body>
