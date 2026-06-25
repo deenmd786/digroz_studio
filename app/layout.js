@@ -25,9 +25,8 @@ export const metadata = {
 
   // 2. PROPERLY ADD GOOGLE SITE VERIFICATION HERE
   verification: {
-    google: '0mcqBiKdiJqE0YI0hajhy2z782UvXFEkE5Avqqem0i4',
+    google: 'Rp_0rNiNE5_jH5jZJn9nm__Zo2BxRlt_Ogb6vS9HAqU',
   },
-
   openGraph: {
     type: "website",
     locale: "en_US",
